@@ -7,12 +7,12 @@ import process
 app = Flask(__name__,template_folder='templates')
 app.secret_key = "vbdgektiksgfnkeia"
 
-app.config['DB2_DATABASE'] = 'learner'
-app.config['DB2_HOSTNAME'] = 'phoebe.is.inf.uni-due.de'
-app.config['DB2_PORT'] = 50141
-app.config['DB2_PROTOCOL'] = 'TCPIP'
-app.config['DB2_USER'] = 'dbp141'
-app.config['DB2_PASSWORD'] = 'aihi9cuz'
+app.config['DB2_DATABASE'] = 
+app.config['DB2_HOSTNAME'] = 
+app.config['DB2_PORT'] = 
+app.config['DB2_PROTOCOL'] = 
+app.config['DB2_USER'] = 
+app.config['DB2_PASSWORD'] = 
 
 db = DB2(app)
 app.debug=True
