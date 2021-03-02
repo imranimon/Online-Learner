@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Course Details</title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+    padding: 30px;
+    }
+    </style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:5000/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://127.0.0.1:5000/css/business-frontpage.css" />
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a style="color: lime" class="navbar-brand" href="/userdetails">Online Learner</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+
+    <!-- Page Content -->
+    <div class="container">
+     <div class="col-xs-12" style="height:100px;"></div>
+            {% if submission_info_result %}
+                <h1 class="card-title">Task Name: {{ cname }}</h1>
+                <table style="border: 1px solid black">
+                    <tr>
+                        <th>Submissions</th>
+                    </tr>
+                    {% for i in submission_info_result %}
+                        <tr>
+                           <td><a href="/rating/{{ i[1] }}/{{ cname }}/{{ i[0] }}"> {{ i[0] }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h4 style="color: #117a8b">No task is asssigned to this course</h4>
+            {% endif %}
+    </div>
+    <footer>
+		<br>
+        <br>
+		&copy; 2021 all rights reserved.
+	</footer>
+</body>
+</html>
